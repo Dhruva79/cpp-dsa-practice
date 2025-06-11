@@ -1,0 +1,44 @@
+//Recursion: 1st occurance
+
+#include <iostream>
+using namespace std;
+
+int arr(int a[], int n, int key) {
+    //Base case
+    if (n == 0) {
+        return -1;
+    }
+    if (a[0]==key) {
+        return 0;
+    }
+    //Recursion
+    int rec = arr(a + 1, n - 1, key);
+    if (rec ==-1) {
+        return -1;
+    }
+    else {
+        return rec + 1;
+    }
+
+
+}
+
+
+int main()
+{
+    int key;
+    int a[] = { 2,3,4,5,3,6,8,9 };
+    int n = sizeof(a) / sizeof(int);
+    cout << "enter the key: " << endl;
+    cin >> key;
+    int ans = arr(a, n, key);
+    if (ans == -1) {
+        cout << "Key dosent exist" << endl;
+    }
+    else {
+        cout << "The ist occurance of the key is " << ans;
+    }
+
+
+    return 0;
+}
