@@ -1,0 +1,30 @@
+1. Index-based recursion (your version: arr(a, n, i + 1, key))
+✅ Pros:
+Easier to understand: You deal with one fixed array and move an index.
+No pointer confusion: You avoid pointer arithmetic (a + 1 etc).
+Safer: Less chance of accidentally accessing memory out-of-bounds.
+
+🧠 Think of it like:
+"I'm looping through the array, just recursively instead of with a for-loop."
+
+✅ Best for:
+Beginners
+
+Finding index/position (since you're already tracking it with i)
+
+Debugging easily
+
+➕ 2. Pointer-shifting recursion (arr(a + 1, n - 1, key))
+✅ Pros:
+Slightly more compact logic (no need for extra index variable).
+
+Good for problems where you care only about elements, not positions.
+
+Useful in low-level pointer manipulation practice.
+
+❌ Cons:
+Tricky for beginners due to a + 1, n - 1, and needing to adjust return values carefully.
+
+Harder to debug since the base pointer is changing.
+
+Preference: Index based
