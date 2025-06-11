@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int arr(int a[], int n, int i, int key) {
+    //base case
+    if (i==n) {
+        return -1;
+    }
+    //Recursive
+    //assuming 1st element is 1st occurance of key
+    if (a[i] == key) {
+
+        int lastocc = arr(a, n, i + 1, key);
+        if (lastocc != -1) {
+            return lastocc;
+        }
+        else {
+            return i;
+        }
+    }
+    //if the 1st element is 1st occurance of key
+    int x = arr(a , n, i + 1, key);
+    return x;
+
+
+}
+
+int main()
+{
+    int a[] = { 11,2,3,1,5,1,1 };
+    int i,key;
+    int n = sizeof(a) / sizeof(int);
+    int abc = arr(a, n, 0, 1);
+    cout << abc;
+
+}
