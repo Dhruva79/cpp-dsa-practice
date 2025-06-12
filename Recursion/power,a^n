@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int power(int a, int n) {
+	// splitting a^n = a*a^(n-1)
+	//base case
+	if (n == 0) {
+		return 1;
+			}
+	//recursion
+	int rec = a * power(a, n - 1);
+	return rec;
+}
+
+int main() {
+	int a = 2;
+	int n = 5;
+	cout << power(a, n);
+	return 0;
+}
