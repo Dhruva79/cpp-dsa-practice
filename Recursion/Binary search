@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int bs(int a[],int s,int e,int key) {
+	
+	//base case
+	if (s > e) {
+		return -1;
+	}
+	int m = (s + e) / 2;
+	//recursion 
+	if (a[m] == key) {
+		return m;
+	}
+	else if (a[m] < key) {
+		return bs(a, m + 1, e, key);
+	}
+	else if (a[m] > key) {
+		return bs(a, s, m - 1, key);
+	}
+}
+
+int main() {
+
+	int a[] = { 1,2,3,4,5,6,7,8,9 };
+	int n = sizeof(a) / sizeof(int);
+	int key = 9;
+	int value=bs(a, 0, n, key);
+	if (value == -1) {
+		cout << "Value does not exist in the array";
+	}
+	else {
+		cout <<"The index of the key is " << value;
+	}
+	
+	return 0;
+
+}
