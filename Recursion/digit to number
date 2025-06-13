@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+string a[] = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+
+void digittonumber(int n) {
+	//base 
+	if (n == 0) {
+		return;
+	}
+	//recursion
+	int digit = n % 10;
+	digittonumber(n / 10);
+	cout << a[digit] << " ";
+	
+}
+
+int main()
+{
+	int n = 1234;
+	digittonumber(n);
+	return 0;
+
+}
