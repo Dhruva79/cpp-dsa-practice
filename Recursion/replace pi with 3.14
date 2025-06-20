@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+void replacepi(char a[], int i) {
+	//Base
+	if (a[i] == '\0' || a[i + 1] == '\0') {
+		return;
+	}
+	//if pi is in the 1st pointer
+	if (a[i] == 'p' && a[i + 1] == 'i') {
+		int j = i + 2;
+		while (a[j] != 0) {
+			j++;
+		}
+		while (j>=i+2) {
+			a[j + 2] = a[j];
+			j--;
+		}
+		a[i] = '3';
+		a[i + 1] = '.';
+		a[i + 2] = '1';
+		a[i + 3] = '4';
+
+		replacepi(a, i + 4);
+	}
+	//if pi deosent start form 1st pointer
+	else {
+		replacepi(a, i + 1);
+	}
+
+}
+
+
+int main() {
+
+	char a[100] = "pifjskpipipi678";
+	int i;
+	cout << "Before replacing" <<endl<< a << endl;
+	replacepi(a, 0);
+	cout << "After Replacing pi" << endl << a << endl;
+
+	return 0;
+}
