@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int stairs(int n, int k) {
+	//base
+	if (n == 0) {
+		return 1;
+	}
+	if (n < 0) {
+		return 0;
+	}
+
+  //Recursive
+	int ways=0;
+	for (int step = 1; step <= k; step++) {
+		 ways += stairs(n-step, k);
+	}
+	return ways;
+}
+
+int main() {
+	int n, k;
+
+	cout << "Enter the max no. of steps that can be taken: ";
+	cin >> k;
+	cout << endl;
+	cout << "Enter the no. of steps: ";
+	cin >> n;
+	cout << endl;
+	cout << "The no. of ways are :" << stairs(n,k);
+
+
+	return 0;
+}
