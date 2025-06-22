@@ -1,0 +1,23 @@
+//Given n friends, each can either stay single or pair up with one of the remaining friends. Find the total number of ways.
+
+#include <iostream>
+using namespace std;
+
+int ways(int n) {
+	//base
+	if (n == 0 || n == 1) {
+		return 1;
+	}
+	//recursion
+	int ans= ways(n - 1) + (n - 1) * ways(n - 2);   //(n-1)C(1)  ie. nCr formula
+	return ans;
+}
+
+int main() {
+	int n;
+	cout << "Enter the no. of friends: ";
+	cin >> n;
+	cout << endl << "The no. of ways are: " << ways(n);
+
+	return 0;
+}
