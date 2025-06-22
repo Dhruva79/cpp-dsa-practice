@@ -1,0 +1,42 @@
+//Count Binary Strings with no consecutive 1
+#include <iostream>
+using namespace std;
+
+int count(int n, int ld) {
+
+	//Base
+	if (n == 0) {
+		return 0;
+	}
+	if (n == 1) {
+		if (ld == 0) {
+			return 2;
+		}
+		if (ld == 1) {
+			return 1;
+		}
+	}
+	//Recursion
+	if (ld == 0) {
+		return count(n - 1, 1) + count(n - 1, 0);
+	}
+	if (ld == 1) {
+		return count(n - 1, 0);
+	}
+
+}
+
+
+
+int main()
+{
+	int n;
+	cout << "Enter the string size ";
+	cin >> n;
+	cout << endl;
+	int ans = count(n - 1, 1) + count(n - 1, 0);
+	cout << "The size of Binary string is without consecutive 1 is  " << ans;
+		
+	
+	return 0;
+}
