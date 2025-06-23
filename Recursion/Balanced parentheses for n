@@ -3,7 +3,7 @@ using namespace std;
 
 void generate(char a[],int i, int open, int close, int n) {
 
-	//base
+	//base  //base case is adding null at the ned of the array
 	if( i==2*n){
 		a[i] = '\0';
 		cout << a << endl;
