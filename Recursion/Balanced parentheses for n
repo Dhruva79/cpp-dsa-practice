@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+void generate(char a[],int i, int open, int close, int n) {
+
+	//base
+	if( i==2*n){
+		a[i] = '\0';
+		cout << a << endl;
+		return ;
+	}
+	//recursion: 2 cases here
+	if (open > close) {
+		a[i]=')';
+		generate(a,i+1, open, close+1, n);    //Update 'close' as we are printing close bracket
+	}
+	if (open < n) {
+		a[i]='(';
+		generate(a, i+1,open+1, close, n);	  //Update 'close' as we are printing open bracket
+	}
+}
+
+
+int main()
+{
+	int n;
+	cout << "Enter the value of n: ";
+	cin >> n;
+	cout << endl;
+	char a[100];
+	generate(a, 0, 0, 0, n);
+
+
+	return 0;
+
+}
