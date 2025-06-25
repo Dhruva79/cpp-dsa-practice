@@ -20,7 +20,7 @@ int main()
     char a[100];
     int digit = 0;
     cin >> a;
-    for (int i = 0; a[i] <= '/0'; i++) {
+    for (int i = 0; a[i] != '\0'; i++) {
         digit = digit * 10 + (a[i] - '0');
     }
     
