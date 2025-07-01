@@ -1,0 +1,11 @@
+1,
+//char to int
+char a[i];
+int digit;
+digit = a[i]-'0';
+
+2.
+int a[];
+int n=sizeof(a)/sizeof(int);.
+
+3.
