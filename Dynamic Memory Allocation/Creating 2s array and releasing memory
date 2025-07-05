@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int row, col;
+
+	cout <<"enter no. of rows: " ;  cin >> row; cout << endl;
+	cout << "enter the no. of col ";  cin >> col; cout << endl;
+	
+	
+
+	//created array of pointers
+	int** a = new  int*[row];
+
+	// (this is not the array in heap)
+	//Allocate each row (columns)
+	//just the 1st element of each row
+	//not taking input here
+
+	for (int i = 0; i < row; i++) {
+		a[i] = new int[col];
+	
+	}
+
+	//taking input for the array in heap
+
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++) {
+			cin >> a[i][j];
+		}
+	}
+	cout << endl;
+
+	//to print the array
+
+	for (int i = 0; i < row; i++) {
+		for (int j = 0; j < col; j++) {
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
+	//to release memory
+	//1. releasing memory in heap
+	for (int i = 0; i < row; i++) {
+		delete[]a[i];
+	}
+	//2. releasing the array of pointers(on the left)
+	delete []a;
+
+	return 0;
+
+}
