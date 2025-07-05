@@ -39,4 +39,13 @@ int main()
 int a[];
 int n=sizeof(a)/sizeof(int);.
 
-3.
+3.To store address
+int *a;
+
+4. static:
+   heap: Dynamic (2 operators: new, delete)
+
+ int *a = new int[100];
+//here a is a pointer, not an array
+delete []a;
+a = new int[100];
