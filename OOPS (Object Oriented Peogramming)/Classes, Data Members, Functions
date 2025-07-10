@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+class car {
+public:
+
+	char name[20];
+	int modelno;
+	float price;
+
+	void Printdetails() {
+
+		cout << name << " " << modelno << " " << price;
+	}
+
+	//void discountedprice() {
+	//	float priceafterdiscount;
+	//	cout << "Enter the discount" << endl;
+	//	int x;
+	//	cin >> x;
+	//	cout << endl;
+	//	priceafterdiscount = price - (price * (x / 100.0));
+	//	cout << priceafterdiscount << endl;
+	//}
+	float  discountedprice(int x) {
+
+
+		float priceafterdiscount = price - (price * (x / 100.0));
+		return priceafterdiscount;
+	}
+
+
+};
+
+
+
+int main() {
+	// create object
+	car a;
+	
+	a.name[0] = 'B';
+	a.name[1] = 'M';  //Intsted of assigning each letter we can use "strcpy(a.name, "BMW")"
+	a.name[2] = 'W';
+	a.name[3] = '\0';
+
+	//strcpy(a.name, "BMW");
+
+	a.modelno = 777;
+	a.price = 100.6;
+
+	cout << a.name << " " << a.modelno << " " << a.price << endl;
+
+	a.Printdetails();  //To print the details directly without typing each time (call a function)
+	int x;
+	cout << "Enter the discount " ;
+	cin >> x;
+	cout << endl;
+	float newvalue = a.discountedprice(x);
+	cout << newvalue << endl;
+	
+
+	/*a.discountedprice();*/
+
+	return 0;
+}
+
+
+//Notes
+//1. use public: :to print the class 
+//2. strcpy(a.name, "Dhruva") to assign the values insted of D, H, R,...individualy
+//3. 
