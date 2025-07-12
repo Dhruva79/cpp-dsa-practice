@@ -7,7 +7,7 @@ public:
 	float model_no;
 	float price;
 
-	//create a functio to print the details;
+	//create a function to print the details;
 
 	void print() {
 		cout << name << endl;
@@ -20,8 +20,8 @@ public:
 		float x;
 		cout << "Enter the discount percentage" << " ";
 		cin >> x;
-		float new_price = price - (price * x) / 100;
-		cout << "The new price after discountis: "<<new_price << endl;
+		price = price - (price * x) / 100;  //The price is updated automatically
+		
 
 	}
 
@@ -34,8 +34,11 @@ int main() {
 	strcpy_s(a.name, "BMW");
 	a.model_no = 1.1;
 	a.price = 2500.5;
+	
 	a.print();
+
 	a.discount();
+	a.print();
 	
 
 
