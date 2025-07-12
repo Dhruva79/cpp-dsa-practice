@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+
+class cars {
+	// setting Price as PRIVATE
+private:
+	float price;
+
+public:
+	char name[100];
+	float model_no;
+	//setter
+	void set_price() {
+		float p;
+		cout << "Enter the price;" << " ";
+		cin >> p;
+		if (p > 0) {
+			price = p;
+			cout << "Price =" << price;
+		}
+		else {
+			cout << "Price =" << 25000.0;
+		}
+	}
+
+	//getter
+	float get_price(float price) {
+		return price;
+	}
+
+	//create a function to print the details;
+
+	void print() {
+		cout << name << endl;
+		cout << model_no << endl;
+		cout << price << endl;
+
+	}
+
+	void discount() {
+		float x;
+		cout << "Enter the discount percentage" << " ";
+		cin >> x;
+		price = price - (price * x) / 100;  //The price is updated automatically
+		
+
+	}
+
+
+};
+
+int main() {
+
+	cars a;
+	strcpy_s(a.name, "BMW");
+	a.model_no = 1.1;
+	//a.price = 2500.5;   Cant initialise price here as it is private (cant access(read or write) outside class)
+	
+	//taking the input of price through fuunction set_price
+	a.set_price();
+
+	a.discount();
+	a.print();
+	
+
+
+	return 0;
+}
