@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class cars {
+public:
+	char name[100];
+	float model_no;
+	float price;
+
+	//create a functio to print the details;
+
+	void print() {
+		cout << name << endl;
+		cout << model_no << endl;
+		cout << price << endl;
+
+	}
+
+	void discount() {
+		float x;
+		cout << "Enter the discount percentage" << " ";
+		cin >> x;
+		float new_price = price - (price * x) / 100;
+		cout << "The new price after discountis: "<<new_price << endl;
+
+	}
+
+
+};
+
+int main() {
+
+	cars a;
+	strcpy_s(a.name, "BMW");
+	a.model_no = 1.1;
+	a.price = 2500.5;
+	a.print();
+	a.discount();
+	
+
+
+	return 0;
+}
