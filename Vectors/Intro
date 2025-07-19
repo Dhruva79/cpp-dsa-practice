@@ -1,0 +1,63 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+
+
+	// creating and initiallising vector
+	vector<int> a; //defining vector, vector of int;
+	vector<int> b(5, 10);   // vector b contains 5 integers, all with value 10;(10,10,10,10,10)
+							// useful when u want to initiliase vector of zeroes
+	vector<int> c(b.begin(), b.end());   // vector c containing all the values of b
+	vector<int> d{ 1,2,3,4,5 };  // vector d initialised with some elements
+
+
+	// Iterate over the vector
+	//Method 1;
+	for (int i = 0; i < c.size(); i++) {  //c.size defines how many vectors c is going to contain
+		cout << c[i]<<",";
+	}
+	cout << endl;
+
+	// to avoid printing comma after last element
+	/*for (int i = 0; i < d.size(); i++) {
+		cout << d[i];
+		if (i != d.size() - 1) {
+			cout << ", ";
+		}
+	}*/
+
+	//Method 2;
+	for (auto i = b.begin(); i != b.end(); i++) {
+		cout << *i << ",";
+	}
+	cout << endl;
+
+	//Method 3;
+	for (int x : d) {          // for int x in vector d, print x(looped)
+		cout << x << ", ";		//here we can use int or auto
+	}
+
+	// add new element at the end of vector; Why do we use push_back()?
+	// To add values dynamically(especially when we don’t know the number of inputs beforehand).
+
+	vector<int> v{ 1,2,3,4,5 };
+	int n,no;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> no;
+		v.push_back(n);
+	}
+	for (int x : v) {
+		cout << x << ",";
+	}
+
+	//functions
+	v.size();            //gives size of vector, how many elements present
+	v.capacity();        //size of underlying array
+	v.max_size();        //max elements memory can hold based on the memory available
+
+
+	return 0;
+}
