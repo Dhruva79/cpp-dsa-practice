@@ -45,7 +45,8 @@ int *a;
 4. static:
    heap: Dynamic (2 operators: new, delete)
 
- int *a = new int[100];
-//here a is a pointer, not an array
-delete []a;
-a = new int[100];
+
+5. As before, *i means:
+
+"Get the value at the address stored in the pointer i."
+gives the value in array, where i is pointing.
