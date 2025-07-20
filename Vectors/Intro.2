@@ -1,0 +1,31 @@
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main() {
+
+	vector<int> a{ 12,13,14,15,16,17 };
+
+	//to add a new element at the end
+	a.push_back(100);
+
+	//remove the last element
+	a.pop_back();
+
+	// add a new element at any given location
+	a.insert(a.begin() + 3, 100);    //adds element 100 after the 3rd element in the array,(0 1 2 3place)
+	a.insert(a.begin() + 3, 2, 100); //adds element 100, 2 times after the 3rd element in the array,(0 1 2 3place)
+
+	//erase any element
+	a.erase(a.begin() + 0);    // remove the 0th element
+
+
+
+	for (int n : a) {
+		cout << n << ",";
+	}
+
+
+	return 0;
+}
