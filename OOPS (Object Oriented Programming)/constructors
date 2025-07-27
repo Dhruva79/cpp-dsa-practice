@@ -1,0 +1,34 @@
+//Constructor 
+
+#include <iostream>
+using namespace std;
+
+class cars {
+public:
+    string name;
+    int id;
+
+public:
+    
+    //constructor for input
+    cars(string n, int i) {
+        name = n;
+        id = i;
+    }
+    //to print
+    void print_cars() {
+        cout << "Name" << name << endl;
+        cout << "ID" << id << endl;
+    }
+
+};
+
+int main()
+{
+    cars A("BMW", 1);
+    cars B("benz", 2);
+    A.print_cars();
+    cout << endl;
+    B.print_cars();
+
+}
