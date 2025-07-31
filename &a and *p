@@ -1,0 +1,7 @@
+int x = 5;
+int* p = &x;
+
+cout << x << endl;    // 5        → value of x
+cout << &x << endl;   // 0x61fe14 → address of x (example)
+cout << p << endl;    // 0x61fe14 → same as &x
+cout << *p << endl;   // 5        → value at address stored in p
