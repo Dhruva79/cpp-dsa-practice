@@ -1,0 +1,50 @@
+Case 1: Passing Pointer by Value
+cpp
+Copy
+Edit
+void modify(int* ptr) {
+    ptr = new int(10);   // changes only local copy
+}
+🔸 Memory Visualization
+lua
+Copy
+Edit
+main():
++------+        +--------+
+| a    | -----> |   5    |
++------+        +--------+
+
+modify():
++------+        +--------+
+| ptr  | -----> |   10   |  ← (New memory)
++------+        +--------+
+a in main() still points to 5.
+
+ptr inside modify() points to new memory with 10, but this change doesn't affect a.
+
+🟩 Case 2: Passing Pointer by Reference
+cpp
+Copy
+Edit
+void modify(int*& ptr) {
+    ptr = new int(10);   // changes original pointer
+}
+🔹 Memory Visualization
+lua
+Copy
+Edit
+main() before:
++------+        +--------+
+| a    | -----> |   5    |
++------+        +--------+
+
+modify():
+(ptr is a reference to a)
+
+main() after:
++------+        +--------+
+| a    | -----> |   10   |  ← (New memory)
++------+        +--------+
+a in main() now points to 10.
+
+Old memory with 5 is lost (memory leak if not deleted).
