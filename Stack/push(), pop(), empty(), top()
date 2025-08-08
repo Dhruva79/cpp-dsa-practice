@@ -1,0 +1,28 @@
+//Stacks
+//stl: follows LIFO: last in first out 
+//a.push(10); adds element on the top
+//a.pop();   removes top element
+//a.top();   returns top element
+//a.empty();  checks if the stack is empty
+
+#include<iostream>
+#include<stack>
+using namespace std;
+int main() {
+	stack<int> s;
+	//push
+	s.push(1);
+	s.push(2);
+
+	cout << s.top() << endl;
+
+	if (s.empty()) {
+		cout << "stack empty" << endl;
+	}
+	else {
+		cout << "stack not empty" << endl;
+	}
+
+
+	return 0;
+}
