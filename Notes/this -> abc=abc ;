@@ -1,0 +1,33 @@
+🧠 this Keyword in C++
+this is a pointer that points to the current object of the class.
+
+So this->size means: "the size variable that belongs to the current object".
+
+🔁 Why do we use this->size = size;?
+Because there's a name conflict.
+
+The constructor parameter is named size.
+
+The class member variable is also named size.
+
+So if you just write:
+
+cpp
+Copy
+Edit
+size = size;
+C++ assumes both refer to the parameter, and the assignment does nothing.
+
+To fix this, you say:
+
+cpp
+Copy
+Edit
+this->size = size;
+Which means:
+
+this->size → class member variable
+
+size → constructor parameter
+
+So you're assigning the parameter to the object’s variable.
