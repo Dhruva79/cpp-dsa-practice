@@ -1,0 +1,34 @@
+When you see a function like this in C++:
+
+cpp
+Copy
+Edit
+void printArray(int *arr, int n) {
+    // do something
+}
+You might wonder why we write int *arr instead of int arr[], since we are passing an array.
+
+🤯 Here's the truth:
+✅ int* arr and int arr[] mean the same thing when used as function parameters.
+
+🔍 Why?
+Because in C++, when you pass an array to a function, the array decays into a pointer to its first element. So:
+
+cpp
+Copy
+Edit
+void func(int arr[])
+and
+
+cpp
+Copy
+Edit
+void func(int *arr)
+are functionally identical. Both are treated by the compiler as:
+
+cpp
+Copy
+Edit
+void func(int *arr)
+That’s why you'll often see people just write int* arr — it's more honest about what’s happening under the hood.
+
