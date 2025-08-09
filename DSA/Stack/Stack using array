@@ -1,0 +1,68 @@
+#include<iostream>
+using namespace std;
+
+class stack {
+public:
+	int top;
+	int* arr;
+	int size;
+
+	//constructor: This constructor is initialising size, array in heap, initialise top with -1
+	stack(int size) {
+
+		this->size = size;
+		//dynamic array in heap
+		arr = new int[size];
+		top = -1;
+	}
+
+	//functions: push , pop, top, size
+	void push(int element) {
+		if (size - top > 1) {
+			top++;
+			arr[top] = element;
+		}
+		else {
+		cout << "Stack overflow" << endl;
+	}
+	}
+	void pop() {
+		if (top >= 0) {
+			top--;
+		}
+		else{
+			cout << "Stack underflow";
+	}
+	}
+	
+	int peak() {
+		if (top >= 0) {
+			return arr[top];
+		}
+		else {
+			cout << "stack is empty";
+		}
+	}
+	bool isend() {
+		if (top == -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+};
+
+int main() {
+
+	stack st(10);
+
+	st.push(100);
+	st.push(200);
+	st.push(300);
+
+	
+
+	return 0;
+}
