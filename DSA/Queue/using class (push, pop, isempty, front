@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+
+class queue {
+private:
+	int* arr;
+	int size;
+	int front;
+	int rear;
+
+public:
+	//Constructor:
+	queue() {
+		int size = 1000;
+		arr = new int[size];
+		front = 0;
+		rear = 0;
+	}
+
+	//Functions:
+	
+	//push
+	void push(int data) {
+		if (rear == size) {
+			cout << "Queue is full" << endl;
+		}
+		else {
+			arr[rear] = data;
+			rear++;
+		}
+	}
+	//pop
+	void pop(int element) {
+		if (front == rear) {
+			cout << "The queue is empty" << endl;
+			}
+		else {
+			arr[front] = -1;
+			front++;
+			if (front == rear) {
+				front = 0;
+				rear = 0;
+			}
+		}
+	}
+
+
+};
+int main() {
+
+
+
+
+
+	return 0;
+}
