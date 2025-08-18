@@ -43,7 +43,24 @@ public:
 			}
 		}
 	}
-
+	//empty
+	bool isempty() {
+		if (front == rear) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	//front
+	int xfront() {
+		if (front == true) {
+			return -1;
+		}
+		else {
+			return arr[front];
+		}
+	}
 
 };
 int main() {
